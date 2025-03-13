@@ -15,7 +15,7 @@ from datetime import datetime, timedelta, timezone
 from jose import jwt
 import jose
 
-SECRET_KEY = os.environ.get('SQLALCHEMY_DATABASE_URI') or 'super secret secrets'
+SECRET_KEY = os.environ.get('SECRET_KEY') or 'super secret secrets'
 
 def encode_token(user_id): #using unique pieces of info to make our tokens user specific
     payload = {
