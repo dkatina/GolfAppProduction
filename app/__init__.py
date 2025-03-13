@@ -14,7 +14,7 @@ def create_app(config_name):
     # Initialize extensions
     db.init_app(app)
     ma.init_app(app)
-    # CORS(app)
+    CORS(app)
 
     app.register_blueprint(account_bp, url_prefix="/accounts")
     app.register_blueprint(player_bp, url_prefix="/players")
