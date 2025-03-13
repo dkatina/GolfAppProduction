@@ -5,8 +5,8 @@ from jose import jwt
 import jose
 from flask import request, jsonify
 import datetime
+import os
 
-SECRET_KEY = "your_secret_key"
 ALGORITHM = "HS256"
 
 # Function to encode a token
@@ -15,7 +15,7 @@ from datetime import datetime, timedelta, timezone
 from jose import jwt
 import jose
 
-SECRET_KEY = "a super secret, secret key"
+SECRET_KEY = os.environ.get('SQLALCHEMY_DATABASE_URI') or 'super secret secrets'
 
 def encode_token(user_id): #using unique pieces of info to make our tokens user specific
     payload = {
